@@ -8,7 +8,11 @@ export class WishesService {
 
   taskList: List[] = [];
 
-  constructor() { }
+  constructor() {
+    
+    console.log('Servicio inicializado');
+    
+   }
 
-  
+
 }
