@@ -8,7 +8,7 @@ import { WishesService } from 'src/app/services/wishes.service';
 })
 export class Tab1Page {
 
-  constructor( public wishService: WishesService) {
-    
+  constructor( public wishesService: WishesService) {
+
   }
 }

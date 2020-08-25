@@ -10,7 +10,11 @@ export class WishesService {
 
   constructor() {
     
-    console.log('Servicio inicializado');
+    const listOne = new List('Recolectar piedras del infinito');
+    const listTwo = new List('Salvar al mundo');
+
+    this.taskList.push(listOne, listTwo);
+
     
    }
 

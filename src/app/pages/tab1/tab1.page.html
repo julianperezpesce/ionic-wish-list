@@ -1,11 +1,18 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
+  <ion-toolbar color="primary">
+    <ion-title >
       Lista de Tareas
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" >
+
+  <ion-list>
+    <ion-item *ngFor="let list of wishesService.taskList" 
+              detail>
+      <ion-label>{{ list.title }}</ion-label>
+    </ion-item>
+  </ion-list>
 
 </ion-content>
