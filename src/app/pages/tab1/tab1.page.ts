@@ -17,7 +17,7 @@ export class Tab1Page {
   }
 
   async addList() {
-    // this.router.navigateByUrl('tabs/add');
+    
     const alert = await this.alertCtrl.create({
       cssClass: 'my-custom-class',
       header: 'Nueva lista',
@@ -39,20 +39,21 @@ export class Tab1Page {
         {
           text: 'Crear lista',
           handler: ( data ) => {
-            console.log( data );
-
+            
             // Validate list
             if ( data.titulo.lenght === 0) {
               return;
             }
+            // create list            
+            const listId = this.wishesService.createList( data.titulo );
 
-            // create list
-            this.wishesService.createList( data.titulo );
+            //create list items
+            this.router.navigateByUrl(`tabs/add/${ listId }`);
           }
         }
       ]
     });
-    alert.present();
+    alert.present()
 
   }
 }

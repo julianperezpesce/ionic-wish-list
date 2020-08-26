@@ -19,6 +19,15 @@ export class WishesService {
     const newList = new List(titulo);
     this.taskList.push( newList );
     this.saveStorage();
+
+    return newList.id;
+  }
+
+  loadList ( id: string | number ) {
+
+    id = Number(id);
+
+    return this.taskList.find( listData => listData.id === id );
   }
 
   saveStorage() {

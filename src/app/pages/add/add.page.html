@@ -5,7 +5,7 @@
       <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>    
 
-    <ion-title>Agregar tarea</ion-title>
+    <ion-title>{{ list.title }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -14,7 +14,8 @@
   <ion-list>
     <ion-item>
       <ion-label position="floating">Escriba su nueva tarea</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" [(ngModel)]="nameItemList"
+                             (keyup.enter)="addItem()"></ion-input>
     </ion-item>
   </ion-list>
 
@@ -24,9 +25,9 @@
       <ion-label>Tareas por hacer</ion-label>
     </ion-list-header>
 
-    <ion-item>
-      <ion-checkbox slot="start"></ion-checkbox>
-      <ion-label>Limpiar</ion-label>
+    <ion-item *ngFor="let item of list.items">
+      <ion-checkbox slot="start" [(ngModel)]="item.complete"></ion-checkbox>
+      <ion-label>{{ item.descrip }}</ion-label>
     </ion-item>
   </ion-list>
 
