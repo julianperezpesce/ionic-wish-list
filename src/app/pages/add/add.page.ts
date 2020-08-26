@@ -49,9 +49,12 @@ export class AddPage implements OnInit {
       this.list.endDate = null;
       this.list.complete = false;
     }
-    
-    
+        
     this.wishesService.saveStorage();
   }
 
+  delete( i: number ) {
+    this.list.items.splice( i, 1 );
+    this.wishesService.saveStorage();
+  }
 }

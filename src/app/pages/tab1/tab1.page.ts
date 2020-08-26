@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { WishesService } from 'src/app/services/wishes.service';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+import { List } from 'src/app/models/list.model';
 
 @Component({
   selector: 'app-tab1',
@@ -48,12 +49,17 @@ export class Tab1Page {
             const listId = this.wishesService.createList( data.titulo );
 
             //create list items
-            this.router.navigateByUrl(`tabs/add/${ listId }`);
+             this.router.navigateByUrl(`tabs/add/${ listId }`);
           }
         }
       ]
     });
     alert.present()
 
+  }
+
+  goToTaskList( list: List ) {
+    
+    this.router.navigateByUrl(`tabs/add/${ list.id }`);
   }
 }

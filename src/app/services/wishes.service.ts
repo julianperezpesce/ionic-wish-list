@@ -41,11 +41,9 @@ export class WishesService {
       this.taskList = JSON.parse( localStorage.getItem('data') );
     } else {
       this.taskList = [];
-    }
-
-    
-
+    }    
     
   }
+
 
 }
