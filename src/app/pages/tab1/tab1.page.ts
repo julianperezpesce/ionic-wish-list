@@ -48,7 +48,6 @@ export class Tab1Page {
 
             // create list
             this.wishesService.createList( data.titulo );
-
           }
         }
       ]

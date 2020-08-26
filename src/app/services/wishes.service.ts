@@ -8,12 +8,9 @@ export class WishesService {
 
   taskList: List[] = [];
 
-  constructor() {
+  constructor() {    
     
-    const listOne = new List('Recolectar piedras del infinito');
-    const listTwo = new List('Salvar al mundo');
-
-    this.taskList.push(listOne, listTwo);
+    this.loadStorage();
     
    }
 
@@ -21,6 +18,25 @@ export class WishesService {
 
     const newList = new List(titulo);
     this.taskList.push( newList );
+    this.saveStorage();
+  }
+
+  saveStorage() {
+
+    localStorage.setItem('data', JSON.stringify(this.taskList));
+  }
+
+  loadStorage() {
+
+    if ( localStorage.getItem('data') ) {
+      this.taskList = JSON.parse( localStorage.getItem('data') );
+    } else {
+      this.taskList = [];
+    }
+
+    
+
+    
   }
 
 }
