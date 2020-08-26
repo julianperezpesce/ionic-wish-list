@@ -1,9 +1,33 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>add</ion-title>
+<ion-header >
+  <ion-toolbar color="primary">
+    
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>    
+
+    <ion-title>Agregar tarea</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating">Escriba su nueva tarea</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-list position="center">
+    
+    <ion-list-header color="danger" >
+      <ion-label>Tareas por hacer</ion-label>
+    </ion-list-header>
+
+    <ion-item>
+      <ion-checkbox slot="start"></ion-checkbox>
+      <ion-label>Limpiar</ion-label>
+    </ion-item>
+  </ion-list>
 
 </ion-content>
