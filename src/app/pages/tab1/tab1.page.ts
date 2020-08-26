@@ -40,6 +40,15 @@ export class Tab1Page {
           text: 'Crear lista',
           handler: ( data ) => {
             console.log( data );
+
+            // Validate list
+            if ( data.titulo.lenght === 0) {
+              return;
+            }
+
+            // create list
+            this.wishesService.createList( data.titulo );
+
           }
         }
       ]

@@ -14,9 +14,13 @@ export class WishesService {
     const listTwo = new List('Salvar al mundo');
 
     this.taskList.push(listOne, listTwo);
-
     
    }
 
+   createList ( titulo: string ) {
+
+    const newList = new List(titulo);
+    this.taskList.push( newList );
+  }
 
 }
