@@ -36,4 +36,22 @@ export class AddPage implements OnInit {
     this.wishesService.saveStorage();
   }
 
+  checkboxChange( item: TaskListItem ) {
+
+    const incomplete = this.list.items
+            .filter( itemData => !itemData.complete)
+            .length;
+    
+    if ( incomplete === 0 ) {
+      this.list.endDate = new Date();
+      this.list.complete = true;
+    } else {
+      this.list.endDate = null;
+      this.list.complete = false;
+    }
+    
+    
+    this.wishesService.saveStorage();
+  }
+
 }
