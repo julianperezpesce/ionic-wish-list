@@ -42,8 +42,13 @@ export class WishesService {
     } else {
       this.taskList = [];
     }    
-    
   }
 
+  deleteList( list: List ) {
+    
+    this.taskList = this.taskList.filter( dataList => dataList.id !== list.id );
+    
+    this.saveStorage();
+  }
 
 }
