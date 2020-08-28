@@ -1,6 +1,6 @@
 
 <ion-list m-5>
-  <ion-item-sliding *ngFor="let list of wishesService.taskList">
+  <ion-item-sliding *ngFor="let list of wishesService.taskList | filterComplete: completeTask">
 
     <ion-item detail (click)="goToTaskList( list )">
       <ion-label>{{ list.title }}</ion-label>
