@@ -58,8 +58,4 @@ export class Tab1Page {
 
   }
 
-  goToTaskList( list: List ) {
-    
-    this.router.navigateByUrl(`tabs/add/${ list.id }`);
-  }
 }

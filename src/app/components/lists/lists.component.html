@@ -1,0 +1,10 @@
+
+<ion-list m-5>
+  <ion-item *ngFor="let list of wishesService.taskList" 
+            detail
+            (click)="goToTaskList( list )">
+    <ion-label>{{ list.title }}</ion-label>
+
+    <ion-note slot="end">{{ list.items.length }} items</ion-note> 
+  </ion-item>
+</ion-list>
